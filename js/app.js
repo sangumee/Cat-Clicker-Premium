@@ -75,6 +75,35 @@ var octopus = {
         } else {
             con.style.display = 'none';
         }
+    },
+    // Add Cat Information
+    addCat: function () {
+        // Get some information from textbox
+        var catName = document.getElementById("name").value;
+        var catImg = document.getElementById("imgurl").value;
+        var clickTotal = document.getElementById("clicks").value;
+        var imgAttr = 'new Cat';
+
+
+        // Check textboxes are filled
+        if (catName === "" || catImg === "" || clickTotal === "") {
+            // If there are no data alert the message
+            alert('No Data!');
+        } else {
+            // If data is fine push it in array
+            model.cats.push({
+                clickCount: clickTotal,
+                name: catName,
+                imgSrc: catImg,
+                imgAttribution: imgAttr
+            });
+            // Render new button and another things
+            catListView.render();
+            // Reset the textbox
+            document.getElementById("name").value = "";
+            document.getElementById("imgurl").value = "";
+            document.getElementById("clicks").value = "0";
+        }
     }
 };
 
@@ -89,7 +118,6 @@ var catView = {
         this.catNameElem = document.getElementById('cat-name');
         this.catImageElem = document.getElementById('cat-img');
         this.countElem = document.getElementById('cat-count');
-        this.adminButton = document.getElementById('admin');
 
         // on click, increment the current cat's counter
         this.catImageElem.addEventListener('click', function () {

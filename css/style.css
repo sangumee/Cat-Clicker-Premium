@@ -4,13 +4,13 @@ body {
 
 .container {
     margin: auto;
-    width: 50%;
+    width: 60%;
     padding-top: 30px;
 }
 
 img {
     border-radius: 25px;
-    width: 80%;
+    width: 60%;
 }
 
 #cat {
@@ -31,6 +31,16 @@ label{
 input[type=text]{
     padding: 5px 15px;
     margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number]{
+    padding: 5px 15px;
+    margin: 5px 0;
+    width:65px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Cat Clicker</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico">
 </head>
 
 <body>
@@ -18,13 +19,13 @@
         <button id="admin" onclick="octopus.adminPanel();">Admin Panel</button>
         <div id="adminPanel" style=display:none>
             <label for="name">Name</label>
-            <input type="text" id="name" maxlength="10" size="10">
+            <input type="text" id="name" size="15" placeholder="Enter your cat name">
             <label for="imgurl">Image URL</label>
-            <input type="text" id="imgurl">
+            <input type="text" id="imgurl" placeholder="ex)https://i.imgur.com/lVlPvCB.gif">
             <label for="clicks">Clicks</label>
-            <input type="text" id="clicks" maxlength="3" size="3">
-            <button id="save">Save</button>
-            <button id="cancel">Cancel</button>
+            <input type="number" id="clicks" value="0" style="ime-mode:disabled;">
+            <button id="save" onclick="octopus.addCat();">Save</button>
+            <button id="cancel" onclick="octopus.adminPanel();">Cancel</button>
         </div>
     </div>
     <script src="js/app.js"></script>
